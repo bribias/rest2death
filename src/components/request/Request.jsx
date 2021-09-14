@@ -57,9 +57,23 @@ const Request = ({ url, body, onChange, onSubmit  }) => {
                         name='method'
                     onChange={onChange} />
                 </div>
+                <textarea
+                    placeholder='Raw JSON request'
+                    rows='10'
+                    cols='50'
+                    name='body'
+                    value={body}
+                onChange={onChange}></textarea>
             </form>
         </>
     );
+};
+
+Request.propTypes = {
+    url: PropTypes.string.isRequired,
+    body: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 };
 
 export default Request;
