@@ -32,7 +32,7 @@ describe('RESTcontainer', () => {
         const URLinput = await screen.findByRole('textbox', { name: 'url' });
         userEvent.type(
             URLinput,
-            '{selectall{del}https://rickandmortyapi.com/api/character'
+            '{selectall}{del}https://rickandmortyapi.com/api/character'
         );
 
         const methodSelection = await screen.findByDisplayValue('GET');

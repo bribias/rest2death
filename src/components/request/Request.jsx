@@ -55,7 +55,8 @@ const Request = ({ url, body, onChange, onSubmit  }) => {
                         value='DELETE'
                         id='delete'
                         name='method'
-                    onChange={onChange} />
+                        onChange={onChange} />
+                    <button aria-label="request">Make a Request</button>
                 </div>
                 <textarea
                     placeholder='Raw JSON request'

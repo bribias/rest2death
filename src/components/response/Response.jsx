@@ -9,3 +9,12 @@ const Response = ({ response }) => {
         </article>
     );
 };
+
+Response.propTypes = {
+    response: PropTypes.oneOfType([
+        PropTypes.object,
+        PropTypes.array
+    ]).isRequired
+};
+
+export default Response;

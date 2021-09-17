@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Request from '../components/request/Request';
 import Response from '../components/response/Response';
 import { fetchAPI } from '../services/fetch';
@@ -33,8 +33,8 @@ export default class RESTcontainer extends Component {
                     url={url}
                     method={method}
                     body={body}
-                    onChange={onChange}
-                    onSubmit={handleSubmit}
+                    onChange={this.handleChange}
+                    onSubmit={this.handleSubmit}
                 />
                 <Response response={response} />
             </>
