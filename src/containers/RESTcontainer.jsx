@@ -13,4 +13,31 @@ export default class RESTcontainer extends Component {
         },
     };
 
+    handleChange = (e) => {
+        this.setState({ [e.target.name]: e.target.value });
+    };
+
+    handleSubmit = (e) => {
+        e.preventDefault();
+        const { url, method, body } = this.state;
+
+        fetchAPI(url, method, body)
+            .then((response) => this.setState({ response }))
+    };
+
+    render() {
+        const { url, method, body, response } = this.state;
+        return (
+            <>
+                <Request
+                    url={url}
+                    method={method}
+                    body={body}
+                    onChange={onChange}
+                    onSubmit={handleSubmit}
+                />
+                <Response response={response} />
+            </>
+        );
+    }
 }
